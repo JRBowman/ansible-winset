@@ -1,0 +1,9 @@
+---
+# This playbook checks and returns the version of Windows.
+
+- name: Check Windows Version
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: PS Check Windows Version
+      win_command: [System.Environment]::OSVersion.Version
