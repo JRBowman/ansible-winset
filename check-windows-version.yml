@@ -6,4 +6,4 @@
   gather_facts: false
   tasks:
     - name: PS Check Windows Version
-      win_command: '[System.Environment]::OSVersion.Version'
+      win_shell: '[System.Environment]::OSVersion.Version'
