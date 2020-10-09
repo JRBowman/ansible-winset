@@ -3,7 +3,7 @@
 
 - name: Check Windows Version
   hosts: all
-  gather_facts: false
+  gather_facts: true
   tasks:
     - name: PS Check Windows Version
       win_command: '[System.Environment]::OSVersion.Version'
