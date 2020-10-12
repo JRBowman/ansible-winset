@@ -1,0 +1,20 @@
+---
+
+- name: Remove IIS
+  hosts: all
+  gather_facts: false
+  tasks:
+
+       - name: Stop iis service
+         win_service:
+           name: W3Svc
+           state: stopped
+
+       - name: remove iis
+         win_feature:
+           name: Web-Server
+           state: absent
+
+       - name: Report Details
+         debug:
+           msg: "http://{{ ansible_host }} >> is no longer a serving webhost."
