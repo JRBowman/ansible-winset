@@ -1,5 +1,9 @@
 ---
- tasks:
+
+- name: Install and Configure IIS
+  hosts: all
+  gather_facts: false
+  tasks:
        - name: install iis
          win_feature:
            name: Web-Server
