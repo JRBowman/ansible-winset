@@ -22,4 +22,3 @@
        - name: Show website address
          debug:
            msg: "http://{{ ansible_host }}"
-  when: ansible.windows.win_domain_controller.dns_domain_name != null
