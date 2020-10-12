@@ -1,0 +1,18 @@
+---
+# Create an AD user:
+
+- name: Create an Active Directory User
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Create User Account
+      win_domain_user:
+        domain_password: {{onbow_ad_user_pass}}
+        domain_username: {{onbow_ad_user_samname}}
+        email: {{onbow_ad_user_samname}}@onbowman.local
+        enabled: yes
+        firstname: {{onbow_ad_user_fname}}
+        surname: {{onbow_ad_user_lname}}
+        name: {{onbow_ad_user_samname}}
+        upn: {{onbow_ad_user_samname}}@onbowman.local
+        state: present
