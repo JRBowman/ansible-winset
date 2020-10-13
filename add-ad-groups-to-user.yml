@@ -7,6 +7,7 @@
     - name: Update User Account
       win_domain_user:
         enabled: yes
-        groups: {{onbow_ad_user_groups}}
+        groups: 
+          - "{{onbow_ad_user_groups}}"
         upn: "{{onbow_ad_user_samname}}@onbowman.local"
         state: present
