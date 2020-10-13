@@ -4,10 +4,9 @@
   hosts: all
   gather_facts: false
   tasks:
-    - name: Update User Account
-      win_domain_user:
-        enabled: yes
-        groups: 
-          - "{{onbow_ad_user_groups}}"
-        upn: "{{onbow_ad_user_samname}}@onbowman.local"
+    - name: Add a domain user/group to a domain group
+      win_domain_group_membership:
+        name: 
+        members:
+          - Bar
         state: present
