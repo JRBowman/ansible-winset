@@ -7,8 +7,6 @@
   tasks:
     - name: Create User Account
       win_domain_user:
-        domain_password: "{{onbow_ad_user_pass}}"
-        domain_username: "{{onbow_ad_user_samname}}"
         password: "{{onbow_ad_user_pass}}"
         email: "{{onbow_ad_user_samname}}@onbowman.local"
         enabled: yes
