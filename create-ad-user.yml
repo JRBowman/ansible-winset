@@ -13,7 +13,7 @@
         firstname: "{{onbow_ad_user_fname}}"
         surname: "{{onbow_ad_user_lname}}"
         groups:
-          - "{{onbow_ad_user_groups}}"
+          - Domain Users
         name: "{{onbow_ad_user_samname}}"
         upn: "{{onbow_ad_user_samname}}@onbowman.local"
         state: present
