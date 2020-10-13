@@ -14,6 +14,7 @@
         surname: "{{onbow_ad_user_lname}}"
         groups:
           - Domain Users
+          - "{{onbow_ad_user_groups}}"
         name: "{{onbow_ad_user_samname}}"
         upn: "{{onbow_ad_user_samname}}@onbowman.local"
         state: present
