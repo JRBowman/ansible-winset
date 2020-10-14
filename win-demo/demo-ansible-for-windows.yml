@@ -4,7 +4,7 @@
 #-------------------------------------------
 
 - name: Ansible Automation Platform for Windows [Demo]
-  hosts:
+  hosts: all
   gather_facts: false
 
   tasks:
