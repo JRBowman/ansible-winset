@@ -3,13 +3,23 @@
 # Demo Playbook for Ansible -> Windows Host:
 #-------------------------------------------
 
+#- name: Configuration for the AAP [Demo]
+ # hosts: all
+  #gather_facts: true
+
+  #tasks:
+   # - name: 0 >> Install PsExec.exe if it's missing
+
+
+
 - name: Ansible Automation Platform for Windows [Demo]
   hosts: all
   gather_facts: false
 
   tasks:
     - name: 0 >> Open Browser to AAP demo
-      win_shell: Start-Process 'https://aap.onbowman.com'
+      win_shell: Start-Process 'Chrome.exe' 'https://aap.onbowman.com'
+
 
 
       #win_shortcut:
