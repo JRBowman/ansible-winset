@@ -18,8 +18,10 @@
 
   tasks:
     - name: 0 >> Open Browser to AAP demo
-      win_shell: Start-Process 'Chrome.exe' 'https://aap.onbowman.com'
-      become: yes
+      win_psexec:
+        executable: C:\util\PSTools\psexec.exe
+        interactive: yes
+        command: psexec.exe 'C:\Program Files\Google\Chrome\Application\chrome.exe' '{{aap_demo_url}}'
 
 
 
