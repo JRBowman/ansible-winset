@@ -1,0 +1,19 @@
+---
+#-------------------------------------------
+# Demo Playbook for Ansible -> Windows Host:
+#-------------------------------------------
+
+- name: Ansible Automation Platform for Windows [Demo]
+  hosts:
+  gather_facts: false
+
+  tasks:
+    - name: 0 >> Open Browser to AAP demo
+      win_shell: Start-Process 'https://aap.onbowman.com'
+
+
+      #win_shortcut:
+        #src: https://aap.onbowman.com
+        #windowstyle: maximized
+        #state: present
+        
