@@ -21,7 +21,7 @@
       win_psexec:
         executable: C:\util\PSTools\psexec.exe
         interactive: yes
-        command: psexec.exe 'C:\Program Files\Google\Chrome\Application\chrome.exe' '{{aap_demo_url}}'
+        command: "'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe' '{{aap_demo_url}}'"
 
 
 
