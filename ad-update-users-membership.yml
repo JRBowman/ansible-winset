@@ -1,12 +1,15 @@
 ---
-# Add AD user to Groups:
+# ------------------------
+# Add AD Users to a Group:
+# ------------------------
+
 - name: Add Active Directory Groups to a User
   hosts: all
   gather_facts: false
   tasks:
     - name: Add a domain user/group to a domain group
       win_domain_group_membership:
-        name: 
+        name: "{{onbow_ad_group_name}}"
         members:
-          - Bar
+          - "{{onbow_ad_group_members}}"
         state: present

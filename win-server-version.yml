@@ -1,0 +1,11 @@
+---
+# -----------------------------
+# Check Current Server Version:
+# -----------------------------
+
+- name: Check Windows Version
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: PS Check Windows Version
+      win_shell: 'echo [System.Environment]::OSVersion.Version'

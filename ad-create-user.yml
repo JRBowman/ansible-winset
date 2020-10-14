@@ -1,5 +1,10 @@
 ---
+# ------------------
 # Create an AD user:
+# ------------------
+# 1.) We use the `win_domain_user` module to do the heavy lifting with Active Directory.
+# 2.) Ansible uses "{{<insert variable name>}}" as the notation for variable substitution.
+# ------------------
 
 - name: Create an Active Directory User
   hosts: all
