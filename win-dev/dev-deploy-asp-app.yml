@@ -16,7 +16,7 @@
         ip: 0.0.0.0
         hostname: "{{onbow_dev_site_name}}.onbowman.com"
         application_pool: "{{onbow_dev_site_name}}"
-        physical_path: "c:\sites\{{onbow_dev_site_name}}"
+        physical_path: "c:\\sites\\{{onbow_dev_site_name}}"
         parameters: logfile.directory:c:\sites\logs
         state: present
       register: website
