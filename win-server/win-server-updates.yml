@@ -3,8 +3,8 @@
 # Install Windows Updates:
 # ------------------------
 
-- hosts: all
-  name: This is my Windows patching playbook
+- name: Windows Patching 
+  hosts: all
   tasks:
     - name: Install Windows Updates
       win_updates:
