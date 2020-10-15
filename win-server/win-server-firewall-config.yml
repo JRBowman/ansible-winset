@@ -6,9 +6,9 @@
 - name: Firewall Configuration for Windows Hosts.
   hosts: all
   tasks:
-  
+
     - name: Firewall rule to allow SMTP on TCP port 25
-      community.windows.win_firewall_rule:
+      win_firewall_rule:
         name: SMTP
         localport: 25
         action: allow
@@ -18,7 +18,7 @@
         enabled: yes
 
     - name: Firewall rule to allow RDP on TCP port 3389
-      community.windows.win_firewall_rule:
+      win_firewall_rule:
         name: Remote Desktop
         localport: 3389
         action: allow
@@ -29,7 +29,7 @@
         enabled: yes
 
     - name: Firewall rule to allow ICMP v4 echo (ping)
-      community.windows.win_firewall_rule:
+      win_firewall_rule:
         name: ICMP Allow incoming V4 echo request
         enabled: yes
         state: present
