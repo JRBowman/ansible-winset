@@ -18,7 +18,6 @@
         application_pool: "{{onbow_dev_site_name}}"
         physical_path: "c:\\sites\\{{onbow_dev_site_name}}"
         parameters: logfile.directory:c:\sites\logs
-        state: present
       register: website
 
     - name: MS Deploy ASP.NET Site
