@@ -1,0 +1,25 @@
+---
+#------------------------------
+# Deploy an ASP.NET app to IIS:
+#------------------------------
+
+- name: Deploy ASP.NET app to IIS
+  hosts: all
+  gather_facts: false
+  tasks:
+
+    - name: Configure IIS site
+      win_iis_website:
+        name: "{{onbow_dev_site_name}}"
+        state: started
+        port: 80
+        ip: *
+        hostname: "{{onbow_dev_site_name}}.onbowman.com"
+        application_pool: "{{onbow_dev_site_name}}"
+        physical_path: "c:\sites\{{onbow_dev_site_name}}"
+        parameters: logfile.directory:c:\sites\logs
+        state: present
+      register: website
+
+    - name: MS Deploy ASP.NET Site
+      win_command: "C:\{{onbow_dev_site_name}}\Deployments\{{onbow_dev_app_name}}\{{onbow_dev_app_name}}.deploy.cmd /Y"
