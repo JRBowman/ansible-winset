@@ -8,5 +8,5 @@
   tasks:
     - name: Install Windows Updates
       win_updates:
-        category_names: "{{ categories | default(omit) }}"
-        reboot: '{{ reboot_server | default(yes) }}'
+        category_names: omit
+        reboot: yes
