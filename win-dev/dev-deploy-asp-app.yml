@@ -10,7 +10,7 @@
 
     - name: Create directory structure
       win_file:
-        path: "C:\\sites\\{{onbow_dev_site_name}}"
+        path: "C:\\inetpub\\{{onbow_dev_site_name}}"
         state: directory
 
     - name: Configure IIS site
@@ -21,7 +21,7 @@
         ip: 0.0.0.0
         hostname: "{{onbow_dev_site_name}}.onbowman.com"
         application_pool: "{{onbow_dev_site_name}}"
-        physical_path: "c:\\sites\\{{onbow_dev_site_name}}"
+        physical_path: "c:\\inetpub\\{{onbow_dev_site_name}}"
         parameters: logfile.directory:c:\sites\logs
       register: website
 
