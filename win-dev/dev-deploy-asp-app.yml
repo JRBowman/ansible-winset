@@ -22,4 +22,4 @@
       register: website
 
     - name: MS Deploy ASP.NET Site
-      win_command: "C:\{{onbow_dev_site_name}}\Deployments\{{onbow_dev_app_name}}\{{onbow_dev_app_name}}.deploy.cmd /Y"
+      win_command: "C:\\{{onbow_dev_site_name}}\\Deployments\\{{onbow_dev_app_name}}\\{{onbow_dev_app_name}}.deploy.cmd /Y"
