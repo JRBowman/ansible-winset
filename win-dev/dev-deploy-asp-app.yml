@@ -10,8 +10,8 @@
 
     - name: Create directory structure
       win_file:
-      path: "C:\\sites\\{{onbow_dev_site_name}}"
-      state: directory
+        path: "C:\\sites\\{{onbow_dev_site_name}}"
+        state: directory
 
     - name: Configure IIS site
       win_iis_website:
