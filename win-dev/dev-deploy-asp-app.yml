@@ -19,7 +19,7 @@
         state: started
         port: 80
         ip: 0.0.0.0
-        #hostname: "{{onbow_dev_site_name}}.onbowman.com"
+        hostname: "host1.onbowman.com"
         application_pool: "{{onbow_dev_site_name}}"
         physical_path: "c:\\inetpub\\{{onbow_dev_site_name}}"
         parameters: logfile.directory:c:\sites\logs
