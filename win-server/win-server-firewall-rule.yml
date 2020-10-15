@@ -1,0 +1,18 @@
+---
+#-----------------
+# Firewall Rule:
+#-----------------
+
+- name: Firewall Rule for Specific Use Cases
+  hosts: all
+  tasks:
+
+    - name: Firewall rule setup
+      win_firewall_rule:
+        name: "{{onbow_fw_rule_name}}"
+        localport: "{{onbow_fw_rule_port}}"
+        action: "{{onbow_fw_rule_action}}"
+        direction: "{{onbow_fw_rule_direction}}"
+        protocol: "{{onbow_fw_rule_protocol}}"
+        state: present
+        enabled: yes
