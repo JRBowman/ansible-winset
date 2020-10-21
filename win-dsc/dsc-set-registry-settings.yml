@@ -1,0 +1,10 @@
+---
+#--------------------------------------------------
+# Windows DSC - Configure Registry Settings / Keys:
+#--------------------------------------------------
+
+- name: Configure Registry Settings via DSC
+  hosts: all
+    - tasks:
+      - name: Use win_dsc module to work with the Win Registry
+        win_dsc:
