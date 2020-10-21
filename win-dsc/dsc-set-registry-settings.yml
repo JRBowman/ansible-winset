@@ -1,6 +1,7 @@
 ---
 #--------------------------------------------------
 # Windows DSC - Configure Registry Settings / Keys:
+# DSC Modules >> https://docs.ansible.com/ansible/latest/collections/community/windows/win_psmodule_module.html#ansible-collections-community-windows-win-psmodule-module
 #--------------------------------------------------
 
 - name: Configure Registry Settings via DSC
