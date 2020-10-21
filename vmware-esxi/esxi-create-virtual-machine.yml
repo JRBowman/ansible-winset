@@ -22,7 +22,7 @@
     folder: /DC1/vm/
     name: "{{esxi_vm_name}}"
     state: poweredon
-    guest_id: windows
+    guest_id: windows9Server64Guest
     # This is hostname of particular ESXi server on which user wants VM to be deployed
     esxi_hostname: "{{ esxi_hostname }}"
     disk:
