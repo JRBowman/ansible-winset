@@ -9,5 +9,5 @@ The Ansible Windows Playbooks (BowmanRH) Repository is a `Git repository`. The r
 
 # Issues
 If you encounter any issues using the repository - please direct comments to:
-- `jbowman@redhat.com`
-- `justin@onbowman.com`
+- jbowman@redhat.com
+- justin@onbowman.com
