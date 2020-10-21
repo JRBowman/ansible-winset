@@ -1,0 +1,10 @@
+---
+#---------------------------------
+# Windows DSC - Configure Updates:
+#---------------------------------
+
+- name: Configure Windows via DSC
+  hosts: all
+    - tasks:
+      - name: Use win_dsc module to execute Windows Updates
+        win_dsc:
