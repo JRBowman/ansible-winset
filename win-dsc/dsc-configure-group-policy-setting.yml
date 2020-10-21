@@ -1,0 +1,8 @@
+---
+
+
+- name: Configure Group Policy via DSC
+  hosts: all
+    - tasks:
+      - name: Use win_dsc module to configure Group Policy for Active Directory
+        win_dsc:
