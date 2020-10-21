@@ -1,5 +1,7 @@
 ---
-
+#--------------------------------------
+# Windows DSC - Configure Group Policy:
+#--------------------------------------
 
 - name: Configure Group Policy via DSC
   hosts: all
