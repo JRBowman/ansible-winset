@@ -1,0 +1,10 @@
+---
+#-----------------------------------------
+# Windows DSC - Configure Windows Feature:
+#-----------------------------------------
+
+- name: Configure Windows Features via DSC
+  hosts: all
+    - tasks:
+      - name: Use win_dsc module to configure Windows Features
+        win_dsc:
