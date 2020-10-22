@@ -28,7 +28,7 @@
       win_shell: |
         $port = (Get-Item -LiteralPath WSMan:\localhost\Client\DefaultPorts\HTTP).Value
         $onlinePorts = @(Get-ChildItem -LiteralPath WSMan:\localhost\Listener |
-          Where-Object { 'Transport=HTTP' -in $_.Keys } |
+          Where-Object { 'Transport=HTTPS' -in $_.Keys } |
           Get-ChildItem |
           Where-Object Name -eq Port |
           Select-Object -ExpandProperty Value)
