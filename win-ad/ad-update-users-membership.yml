@@ -1,16 +1,24 @@
 ---
-# ------------------------
-# Add AD Users to a Group:
-# ------------------------
-# Adds Users to a series
-# of Groups in Win AD.
-# ------------------------
+#----------------------------------------------------------------
+# Add AD Users to a Group - [Win_Domain_Group_Membership Module]:
+#----------------------------------------------------------------
+# Adds Users to a series of Groups in Windows Active Directory
+# using the *Win_Domain_Group_Membership* Module.
+#----------------------------------------------------------------
 
-#-------------------------
+#----------------------------------------------------------------
+# Documentation Links:
+#----------------------------------------------------------------
+# - Win_Domain_Group_Membership: https://docs.ansible.com/ansible/latest/collections/community/windows/win_domain_group_membership_module.html
+# - Ansible Loops: https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html
+#----------------------------------------------------------------
+
+#----------------------------------------------------------------
 # Required Variables:
-# - ad_group_names
-# - ad_group_members
-#-------------------------
+#----------------------------------------------------------------
+# - ad_group_names >> Set of Groups to assign memberships to.
+# - ad_group_members >> Set of Users to assign to the groups.
+#----------------------------------------------------------------
 
 - name: Add Active Directory Groups to a User
   hosts: all
