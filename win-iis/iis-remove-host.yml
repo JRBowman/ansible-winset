@@ -1,17 +1,15 @@
 ---
-#----------------------
-# Remove IIS from Host:
-#----------------------
-# Use Win_Service Module
-# to stop IIS First.
-# Use Win_Feature module
-# to remove IIS.
-#----------------------
+#------------------------------------------------------------
+# Remove IIS from Host - [Win_Feature & Win_Service Modules]:
+#------------------------------------------------------------
+# Use *Win_Service* Module to stop IIS First.
+# Use *Win_Feature* module to remove IIS.
+# Use *Ansible Msg* to notify details of the play.
+#------------------------------------------------------------
 
-#----------------------
+#------------------------------------------------------------
 # No Required Variables
-#----------------------
-
+#------------------------------------------------------------
 
 - name: Remove IIS
   hosts: all
