@@ -1,0 +1,25 @@
+---
+#----------------------------------------------------
+# Configure Group Policy Settings - [Win_Dsc Module]:
+#----------------------------------------------------
+# Configure settings for Group Policy in Windows
+# Active Directory.
+#----------------------------------------------------
+
+#----------------------------------------------------
+# Documentation Links
+#----------------------------------------------------
+# - GroupPolicyDSC: https://github.com/citadelgroup/GroupPolicyDsc
+# - Win_Dsc: https://docs.ansible.com/ansible/latest/collections/ansible/windows/win_dsc_module.html
+#----------------------------------------------------
+
+#----------------------------------------------------
+# Required Variables:
+#----------------------------------------------------
+# - 
+#----------------------------------------------------
+
+- name: Configure Group Policy Settings
+  hosts: all
+  tasks:
+    - name: 
