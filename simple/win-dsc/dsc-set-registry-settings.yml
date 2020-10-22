@@ -1,0 +1,40 @@
+---
+#-------------------------------------------------------
+# Configure Registry Settings / Keys - [Win_Dsc Module]:
+#-------------------------------------------------------
+# Use Windows Desired State Configuration (DSC) to set
+# Registry Settings for Windows - via the *Win_Dsc*
+# Module.
+#
+# >> See *Modules_List* link below for more ready-to-use
+# >> Windows DSC Modules for Ansible.
+#-------------------------------------------------------
+
+#-------------------------------------------------------
+# Documentation Links:
+#-------------------------------------------------------
+# - Win_Dsc: https://docs.ansible.com/ansible/latest/collections/ansible/windows/win_dsc_module.html
+# - Modules_List: https://docs.ansible.com/ansible/latest/collections/community/windows/win_psmodule_module.html#ansible-collections-community-windows-win-psmodule-module
+#-------------------------------------------------------
+
+#-------------------------------------------------------
+# Required Variables:
+#-------------------------------------------------------
+# - dsc_reg_key >> Key / Path in Registry
+# - dsc_reg_valuename >> Name of the Value on Key
+# - dsc_reg_valuedata >> Data for the value
+#-------------------------------------------------------
+
+- name: Configure Registry Settings via DSC
+  hosts: all
+    - tasks:
+      - name: Use win_dsc module to work with the Win Registry
+        win_dsc:
+          resoure_name: Registry
+          Ensure: Present
+          Key: "{{dsc_reg_key}}"
+          ValueName: "{{dsc_reg_valuename}}"
+          ValueData: "{{dsc_reg_valuedata}}"
+          PsDscRunAsCredential_username: '{{ansible_user}}'
+          PsDscRunAsCredential_password: '{{ansible_password}}'
+        no_log: true

@@ -1,0 +1,25 @@
+---
+#----------------------------------------------------------------------------
+# Configure / Execute Windows Updates with Option Support - [Win_Dsc Module]:
+#----------------------------------------------------------------------------
+# Use *Win_Dsc* Module to Configure or Run Windows Updates through Windows
+# Desired State Configuration (DSC).
+#----------------------------------------------------------------------------
+
+#----------------------------------------------------------------------------
+# Documentation Links:
+#----------------------------------------------------------------------------
+# - Win_Dsc: https://docs.ansible.com/ansible/latest/collections/ansible/windows/win_dsc_module.html
+#----------------------------------------------------------------------------
+
+#----------------------------------------------------------------------------
+# Required Variables:
+#----------------------------------------------------------------------------
+# - 
+#----------------------------------------------------------------------------
+
+- name: Configure Windows via DSC
+  hosts: all
+    - tasks:
+      - name: Use win_dsc module to execute Windows Updates
+        win_dsc:
