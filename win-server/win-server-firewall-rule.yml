@@ -1,18 +1,32 @@
 ---
-#-----------------
-# Firewall Rule:
-#-----------------
+#-----------------------------------------------------------
+# Create Dynamic Firewall Rule - [Win_Firewall_Rule Module]:
+#-----------------------------------------------------------
+# Dynamic Playbook to reuse for managing Windows Firewall
+# Rules.
+#-----------------------------------------------------------
+
+#-----------------------------------------------------------
+# Required Variables:
+#-----------------------------------------------------------
+# - fw_rule_name >> Name of the Rule
+# - fw_rule_port >> Port to take action
+# - fw_rule_action >> allow : deny
+# - fw_rule_direction >> in : out
+# - fw_rule_protocol >> tcp : udp
+# - fw_rule_enabled >> yes : no
+# - fw_rule_state >> present : absent
+#-----------------------------------------------------------
 
 - name: Firewall Rule for Specific Use Cases
   hosts: all
   tasks:
-
     - name: Firewall rule setup
       win_firewall_rule:
-        name: "{{onbow_fw_rule_name}}"
-        localport: "{{onbow_fw_rule_port}}"
-        action: "{{onbow_fw_rule_action}}"
-        direction: "{{onbow_fw_rule_direction}}"
-        protocol: "{{onbow_fw_rule_protocol}}"
-        state: present
-        enabled: yes
+        name: "{{fw_rule_name}}"
+        localport: "{{fw_rule_port}}"
+        action: "{{fw_rule_action}}"
+        direction: "{{fw_rule_direction}}"
+        protocol: "{{fw_rule_protocol}}"
+        state: "{{fw_rule_state}}"
+        enabled: "{{fw_rule_enabled}}"
