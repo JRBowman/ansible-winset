@@ -1,7 +1,15 @@
 ---
-# ------------------------
+#-------------------------
 # Install IIS to the Host:
-# ------------------------
+#-------------------------
+# Use the Win_Feature Module
+# to add IIS to the Windows
+# Hosts.
+#-------------------------
+
+#-------------------------
+# No Required Variables.
+#-------------------------
 
 - name: Install and Configure IIS
   hosts: all
