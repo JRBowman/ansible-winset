@@ -1,7 +1,24 @@
 ---
-#--------------------------------------
-# Windows DSC - Configure Group Policy:
-#--------------------------------------
+#-------------------------------------------
+# Configure Group Policy - [Win_Dsc Module]:
+#-------------------------------------------
+# Use Windows Desired State Configuration
+# (DSC) to set Group Policy settings for the
+# Active Directory Domain.
+#-------------------------------------------
+
+#-------------------------------------------
+# Documentation Links:
+#-------------------------------------------
+# - Win_Dsc: https://docs.ansible.com/ansible/latest/collections/ansible/windows/win_dsc_module.html
+# - Windows DSC: https://docs.microsoft.com/en-us/powershell/scripting/dsc/overview/overview?view=powershell-7
+#-------------------------------------------
+
+#-------------------------------------------
+# Required Variables:
+#-------------------------------------------
+# - 
+#-------------------------------------------
 
 - name: Configure Group Policy via DSC
   hosts: all
