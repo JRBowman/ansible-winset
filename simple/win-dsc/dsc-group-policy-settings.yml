@@ -16,10 +16,17 @@
 #----------------------------------------------------
 # Required Variables:
 #----------------------------------------------------
-# - 
+# - dsc_gp_object_name >> <Name of the GPO to modify>
+# - dsc_gp_state >> AllSettingsEnabled : UserSettingsDisabled : ComputerSettingsDisabled : AllSettingsDisabled
+# - dsc_dp_ensure >> Present : Absent
 #----------------------------------------------------
 
 - name: Configure Group Policy Settings
   hosts: all
   tasks:
-    - name: 
+    - name: Set Group Policy Settings
+      win_dsc:
+        resource_name: GroupPolicy
+        name: "{{dsc_gp_object_name}}"
+        ensure: "{{dsc_gp_ensure}}"
+        status: "{{dsc_gp_state}}"
