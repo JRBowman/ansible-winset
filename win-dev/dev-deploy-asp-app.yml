@@ -2,6 +2,16 @@
 #------------------------------
 # Deploy an ASP.NET app to IIS:
 #------------------------------
+# Uses the IIS Dev Tools + Web
+# Publish package to create new
+# IIS Sites.
+#------------------------------
+
+#------------------------------
+# Required Variables:
+# - dev_site_name
+# - dev_app_name
+#------------------------------
 
 - name: Deploy ASP.NET app to IIS
   hosts: all
@@ -10,20 +20,20 @@
 
     - name: Create directory structure
       win_file:
-        path: "C:\\inetpub\\{{onbow_dev_site_name}}"
+        path: "C:\\inetpub\\{{dev_site_name}}"
         state: directory
 
     - name: Configure IIS site
       win_iis_website:
-        name: "{{onbow_dev_site_name}}"
+        name: "{{dev_site_name}}"
         state: started
         port: 80
         ip: 0.0.0.0
         hostname: "host1.onbowman.com"
-        application_pool: "{{onbow_dev_site_name}}"
-        physical_path: "c:\\inetpub\\{{onbow_dev_site_name}}"
+        application_pool: "{{dev_site_name}}"
+        physical_path: "c:\\inetpub\\{{dev_site_name}}"
         parameters: logfile.directory:c:\sites\logs
       register: website
 
     - name: MS Deploy ASP.NET Site
-      win_command: "C:\\{{onbow_dev_site_name}}\\Deployments\\{{onbow_dev_app_name}}\\{{onbow_dev_app_name}}.deploy.cmd /Y"
+      win_command: "C:\\{{dev_site_name}}\\Deployments\\{{dev_app_name}}\\{{dev_app_name}}.deploy.cmd /Y"
