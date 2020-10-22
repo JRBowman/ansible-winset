@@ -27,7 +27,6 @@
     - name: Add a domain user/group to a domain group
       win_domain_group_membership:
         name: "{{item}}"
-        members:
-          - "{{ad_group_members}}"
+        members: "{{ad_group_members}}"
         state: present
       - loop: "{{ad_group_names}}"
