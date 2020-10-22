@@ -31,10 +31,10 @@
       - name: Use win_dsc module to work with the Win Registry
         win_dsc:
           resoure_name: Registry
-          Ensure: Present
           Key: "{{dsc_reg_key}}"
           ValueName: "{{dsc_reg_valuename}}"
           ValueData: "{{dsc_reg_valuedata}}"
+          Ensure: Present
           PsDscRunAsCredential_username: '{{ansible_user}}'
           PsDscRunAsCredential_password: '{{ansible_password}}'
         no_log: true
