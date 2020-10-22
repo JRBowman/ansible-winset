@@ -1,7 +1,14 @@
 ---
-# -----------------------------
-# Check Current Server Version:
-# -----------------------------
+#-------------------------------------------------------------
+# Check Current Server Version - [Win_Shell Module with .NET]:
+#-------------------------------------------------------------
+# Simple Connection Test script - connects to the hosts via
+# WinRM and uses .NET to get OS Information.
+#-------------------------------------------------------------
+
+#-------------------------------------------------------------
+# No Required Variables.
+#-------------------------------------------------------------
 
 - name: Check Windows Version
   hosts: all
@@ -9,3 +16,8 @@
   tasks:
     - name: PS Check Windows Version
       win_shell: 'echo [System.Environment]::OSVersion.Version'
+      register: osversion
+      
+    - debug:
+        msg: "{{osversion}}"
+      when: osversion.changed == true
