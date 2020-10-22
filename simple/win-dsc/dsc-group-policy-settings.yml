@@ -16,9 +16,12 @@
 #----------------------------------------------------
 # Required Variables:
 #----------------------------------------------------
-# - dsc_gp_object_name >> <Name of the GPO to modify>
-# - dsc_gp_state >> AllSettingsEnabled : UserSettingsDisabled : ComputerSettingsDisabled : AllSettingsDisabled
-# - dsc_dp_ensure >> Present : Absent
+# - dsc_gp__name >> Name of the GPO to modify
+# - dsc_gp_key >> Name of the Key / Path / Setting to modify 
+# - dsc_gp_object_valuename >> Value Name of the Setting
+# - dsc_gp_object_valuedata >> Data for the Setting
+# - dsc_gp_object_valuetype >> DWORD : Other
+# - dsc_gp_object_ensure >> AllSettingsEnabled : UserSettingsDisabled : ComputerSettingsDisabled : AllSettingsDisabled
 #----------------------------------------------------
 
 - name: Configure Group Policy Settings
@@ -26,7 +29,10 @@
   tasks:
     - name: Set Group Policy Settings
       win_dsc:
-        resource_name: GroupPolicy
-        name: "{{dsc_gp_object_name}}"
-        ensure: "{{dsc_gp_ensure}}"
-        status: "{{dsc_gp_state}}"
+        resource_name: GPRegistryValue
+        name: "{{dsc_gp_name}}"
+        key: "{{dsc_gp_object_key}}"
+        valuename: "{{dsc_gp_object_valuename}}"
+        valuedata: "{{dsc_gp_object_valuedata}}"
+        valuetype: "{{dsc_gp_object_valuetype}}"
+        ensure: "{{dsc_gp_object_ensure}}"
