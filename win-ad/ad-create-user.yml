@@ -1,21 +1,27 @@
 ---
-#-----------------------
-# Create an AD user:
-#-----------------------
-# Create a Win AD User,
-# assigning the required
-# fields.
-#-----------------------
+#----------------------------------------------
+# Create an AD user - [Win_Domain_User Moudle]:
+#----------------------------------------------
+# Create a Win AD User using the Module
+# *Win_Domain_User*.
+#----------------------------------------------
 
-#-----------------------
+#----------------------------------------------
+# Documentation Links:
+#----------------------------------------------
+# - Win_Domain_User: https://docs.ansible.com/ansible/latest/collections/community/windows/win_domain_user_module.html
+#----------------------------------------------
+
+#----------------------------------------------
 # Required Variables:
+#----------------------------------------------
 # - ad_user_domain >> Domain for User
 # - ad_user_samname >> User UPN
 # - ad_user_pass >> Password
 # - ad_user_groups >> AD Groups to join
 # - ad_user_fname >> First Name
 # - ad_user_lname >> Last Name
-#-----------------------
+#----------------------------------------------
 
 - name: Create an Active Directory User
   hosts: all
