@@ -1,15 +1,25 @@
 ---
-#-------------------------
-# Install IIS to the Host:
-#-------------------------
-# Use the Win_Feature Module
-# to add IIS to the Windows
-# Hosts.
-#-------------------------
+#---------------------------------------------------------------
+# Install IIS to the Host - [Win_Feature & Win_Service Modules]:
+#---------------------------------------------------------------
+# Use the *Win_Feature* Module to add IIS to the Windows Hosts.
+# Use the *Win_Service* Module to Ensure IIS is started.
+# Use the *Win_Copy* Module to write some content to a test Site.
+# Use Ansible Msg to show the status of the webhost.
+#---------------------------------------------------------------
 
-#-------------------------
+#---------------------------------------------------------------
+# Documentation Links:
+#---------------------------------------------------------------
+# - Win_Feature: https://docs.ansible.com/ansible/latest/collections/ansible/windows/win_feature_module.html
+# - Win_Service: https://docs.ansible.com/ansible/latest/collections/ansible/windows/win_service_module.html
+# - Win_Copy: https://docs.ansible.com/ansible/latest/collections/ansible/windows/win_copy_module.html
+# - Ansible Msg: https://docs.ansible.com/ansible/latest/collections/ansible/builtin/debug_module.html
+#---------------------------------------------------------------
+
+#---------------------------------------------------------------
 # No Required Variables.
-#-------------------------
+#---------------------------------------------------------------
 
 - name: Install and Configure IIS
   hosts: all
