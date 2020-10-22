@@ -36,5 +36,5 @@
       win_dsc:
        resource_name: GroupPolicy
        Name: "{{dsc_gp_name}}"
-       Status: AllSettings
+       Status: AllSettingsEnabled
        Ensure: present
