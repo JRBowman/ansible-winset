@@ -1,7 +1,17 @@
 ---
-# ---------------------
+#----------------------
 # Remove IIS from Host:
-# ---------------------
+#----------------------
+# Use Win_Service Module
+# to stop IIS First.
+# Use Win_Feature module
+# to remove IIS.
+#----------------------
+
+#----------------------
+# No Required Variables
+#----------------------
+
 
 - name: Remove IIS
   hosts: all
