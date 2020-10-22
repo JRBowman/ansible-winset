@@ -1,7 +1,25 @@
 ---
-#-----------------------------------------
-# Windows DSC - Setup / Configuration:
-#-----------------------------------------
+#--------------------------------------------
+# Setup / Configuration - [Win_Shell Module]:
+#--------------------------------------------
+# Use the *Win_Shell* Module to execute PS
+# commands to validate the the host is ready
+# to execute Windows DSC commands.
+#
+# Example Script comes from Ansible Docs
+# below.
+#--------------------------------------------
+
+#--------------------------------------------
+# Documentation Links:
+#--------------------------------------------
+# - Win_Shell: https://docs.ansible.com/ansible/latest/collections/ansible/windows/win_shell_module.html
+# - Win-Dsc: https://docs.ansible.com/ansible/latest/collections/ansible/windows/win_dsc_module.html
+#--------------------------------------------
+
+#--------------------------------------------
+# No Required Variables.
+#--------------------------------------------
 
 - name: Verify the WSMan HTTP listener is active and configured correctly
   hosts: all
