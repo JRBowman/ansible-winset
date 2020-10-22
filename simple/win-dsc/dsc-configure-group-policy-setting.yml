@@ -17,11 +17,24 @@
 #-------------------------------------------
 # Required Variables:
 #-------------------------------------------
-# - 
+# - dsc_gp_name >> Group Policy to manage
 #-------------------------------------------
 
 - name: Configure Group Policy via DSC
   hosts: all
     - tasks:
+    
+      - name: Install Nuget Package Manager
+        win_shell: install-packageprovider -name nuget -force
+    
+       - name: Install GroupPolicyDSC Object Set
+         win_psmodule:
+           name: GroupPolicyDSC
+           state: present
+    
       - name: Use win_dsc module to configure Group Policy for Active Directory
         win_dsc:
+          resource_name: GroupPolicy
+          name: "{{dsc_gp_name}}"
+          status: allsettings
+          ensure: present
