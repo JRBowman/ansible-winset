@@ -5,6 +5,8 @@
 # Simple example that instructs the Windows Host
 # to Install the latest updates from the Server's
 # configured *Update Service*.
+#
+# Example Details: https://docs.ansible.com/ansible/latest/collections/ansible/windows/win_updates_module.html
 #------------------------------------------------
 
 #------------------------------------------------
