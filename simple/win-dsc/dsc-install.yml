@@ -21,12 +21,12 @@
 # No Required Variables.
 #--------------------------------------------
 
-- name: Verify the WSMan HTTP listener is active and configured correctly
+- name: Verify the WSMan HTTPS listener is active and configured correctly
   hosts: all
   tasks:
     - name: Check WSMan settings
       win_shell: |
-        $port = (Get-Item -LiteralPath WSMan:\localhost\Client\DefaultPorts\HTTP).Value
+        $port = (Get-Item -LiteralPath WSMan:\localhost\Client\DefaultPorts\HTTPS).Value
         $onlinePorts = @(Get-ChildItem -LiteralPath WSMan:\localhost\Listener |
           Where-Object { 'Transport=HTTPS' -in $_.Keys } |
           Get-ChildItem |
