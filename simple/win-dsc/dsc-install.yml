@@ -18,7 +18,9 @@
 #--------------------------------------------
 
 #--------------------------------------------
-# No Required Variables.
+# Required Variables:
+#--------------------------------------------
+# - dsc_wsman_transport >> HTTP : HTTPS
 #--------------------------------------------
 
 - name: Verify the WSMan HTTPS listener is active and configured correctly
@@ -26,13 +28,13 @@
   tasks:
     - name: Check WSMan settings
       win_shell: |
-        $port = (Get-Item -LiteralPath WSMan:\localhost\Client\DefaultPorts\HTTPS).Value
+        $port = (Get-Item -LiteralPath WSMan:\localhost\Client\DefaultPorts\"{{dsc_wsman_transport}}").Value
         $onlinePorts = @(Get-ChildItem -LiteralPath WSMan:\localhost\Listener |
-          Where-Object { 'Transport=HTTPS' -in $_.Keys } |
+          Where-Object { 'Transport="{{dsc_wsman_transport}}"' -in $_.Keys } |
           Get-ChildItem |
           Where-Object Name -eq Port |
           Select-Object -ExpandProperty Value)
 
         if ($port -notin $onlinePorts) {
-          "The default client port $port is not set up as a WSMan HTTP listener, win_dsc will not work."
+          "The default client port $port is not set up as a WSMan "{{dsc_wsman_transport}}" listener, win_dsc will not work."
         }
