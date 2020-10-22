@@ -1,10 +1,21 @@
 ---
-# ------------------
+#-----------------------
 # Create an AD user:
-# ------------------
-# 1.) We use the `win_domain_user` module to do the heavy lifting with Active Directory.
-# 2.) Ansible uses "{{<insert variable name>}}" as the notation for variable substitution.
-# ------------------
+#-----------------------
+# Create a Win AD User,
+# assigning the required
+# fields.
+#-----------------------
+
+#-----------------------
+# Required Variables:
+# - ad_user_domain >> Domain for User
+# - ad_user_samname >> User UPN
+# - ad_user_pass >> Password
+# - ad_user_groups >> AD Groups to join
+# - ad_user_fname >> First Name
+# - ad_user_lname >> Last Name
+#-----------------------
 
 - name: Create an Active Directory User
   hosts: all
@@ -12,12 +23,12 @@
   tasks:
     - name: Create User Account
       win_domain_user:
-        password: "{{onbow_ad_user_pass}}"
-        email: "{{onbow_ad_user_samname}}@onbowman.local"
+        password: "{{ad_user_pass}}"
+        email: "{{ad_user_samename}}@{{ad_user_domain}}"
         enabled: yes
-        firstname: "{{onbow_ad_user_fname}}"
-        surname: "{{onbow_ad_user_lname}}"
-        groups: "{{onbow_ad_user_groups}}"
-        name: "{{onbow_ad_user_samname}}"
-        upn: "{{onbow_ad_user_samname}}@onbowman.local"
+        firstname: "{{ad_user_fname}}"
+        surname: "{{ad_user_lname}}"
+        groups: "{{ad_user_groups}}"
+        name: "{{ad_user_fname}} {{ad_user_lname}}"
+        upn: "{{ad_user_samname}}{{ad_user_domain}}"
         state: present
