@@ -1,23 +1,32 @@
 ---
-#----------------------------------------------
-# vmware_guest Module - Create Virtual Machine:
-#----------------------------------------------
-# Example Details: https://docs.ansible.com/ansible/latest/collections/community/vmware/vmware_guest_module.html
-#----------------------------------------------
+#------------------------------------------------
+# Create Virtual Machine - [VMware_Guest Module]:
+#------------------------------------------------
+# Simple Example of connecting to an ESXi host
+# and creating a new Virtual Machine in the ESXi
+# Inventory - via the *VMware_Guest* Module.
+#------------------------------------------------
 
-#----------------------------------------------
+#------------------------------------------------
+# Documentation Links:
+#------------------------------------------------
+# - VMware_Guest: https://docs.ansible.com/ansible/latest/collections/community/vmware/vmware_guest_module.html
+#------------------------------------------------
+
+#------------------------------------------------
 # Required Variables:
-# - esxi_hostname
-# - esxi_username
-# - esxi_password
-# - esxi_datastore
-# - esxi_datastore_folder
-# - esxi_vm_name
-# - esxi_vm_cpu
-# - esxi_vm_memory
-# - esxi_vm_initial_state
-# - esxi_vm_guest_id
-#----------------------------------------------
+#------------------------------------------------
+# - esxi_hostname >> ESXi DNS Hostname (FQDN Preferred)
+# - esxi_username >> ESXi Username
+# - esxi_password >> ESXi Password
+# - esxi_datastore >> Name of the Datastore for the VM
+# - esxi_datastore_folder >> Folder Path for the VM data
+# - esxi_vm_name >> Friendly name for the VM
+# - esxi_vm_cpu >> # of vCPUs to allocate
+# - esxi_vm_memory >> # of MB of RAM to allocate
+# - esxi_vm_initial_state >> Initial VM State in ESXi
+# - esxi_vm_guest_id >> Type ID of the Guest Operating System
+#------------------------------------------------
 
 - name: Create a virtual machine on given ESXi hostname
   vmware_guest:
