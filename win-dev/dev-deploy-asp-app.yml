@@ -1,6 +1,6 @@
 ---
 #-----------------------------------------------------------------------------------
-# Deploy an ASP.NET app to IIS - [Win_File & Win_IIS_Website & Win_Command Modules]:
+# Deploy an ASP.NET app to IIS - [Win_File | Win_IIS_Website | Win_Command Modules]:
 #-----------------------------------------------------------------------------------
 # Uses the IIS Dev Tools + Web Publish package to create new IIS Sites.
 #-----------------------------------------------------------------------------------
@@ -16,13 +16,13 @@
 #-----------------------------------------------------------------------------------
 # Required Variables:
 #-----------------------------------------------------------------------------------
-# - dev_site_name
-# - dev_site_port
-# - dev_site_state
-# - dev_site_hostname
-# - dev_site_ip
-# - dev_app_package_name
-# - dev_app_package_path
+# - dev_site_name >> IIS Site Name
+# - dev_site_ip >> <Static IP Address> : 0.0.0.0
+# - dev_site_port >> <Port Number> : 80
+# - dev_site_state >> started : stopped
+# - dev_site_hostname >> DNS Hostname for the IIS Site
+# - dev_app_package_name >> ASP.NET Application name of the Web Publish Package
+# - dev_app_package_path >> Path to the ASP.NET Web Publish Package
 #-----------------------------------------------------------------------------------
 
 - name: Deploy ASP.NET app to IIS
