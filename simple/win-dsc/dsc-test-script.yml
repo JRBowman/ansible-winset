@@ -1,0 +1,26 @@
+---
+#------------------------------------------
+# Windows Host DSC Test - [Win_Dsc Module]:
+#------------------------------------------
+# Test Desired State Configuration (DSC) on
+# the Windows Host using the *Win_Dsc* 
+# Module.
+#------------------------------------------
+
+#------------------------------------------
+# Documentation Links:
+#------------------------------------------
+# - Win_Dsc: https://docs.ansible.com/ansible/latest/collections/ansible/windows/win_dsc_module.html
+#------------------------------------------
+
+#------------------------------------------
+# No Required Variables.
+#------------------------------------------
+
+- name: DSC Test Script
+  hosts: all
+  tasks:
+    - name: Call DSC resource with DateTime option
+      win_dsc:
+        resource_name: DateTimeResource
+        DateTimeOption: '2019-02-22T13:57:31.2311892+00:00'
