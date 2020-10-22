@@ -35,6 +35,6 @@
     - name: Use win_dsc module to configure Group Policy for Active Directory
       win_dsc:
        resource_name: GroupPolicy
-       name: "{{dsc_gp_name}}"
-       status: allsettings
-       ensure: present
+       Name: "{{dsc_gp_name}}"
+       Status: AllSettings
+       Ensure: present
