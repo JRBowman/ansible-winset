@@ -30,5 +30,4 @@
         members:
           - "{{ad_group_members}}"
         state: present
-      - loop:
-        - "{{ad_group_names}}"
+      - loop: "{{ad_group_names}}"
