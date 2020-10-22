@@ -30,9 +30,9 @@
     - name: Set Group Policy Settings
       win_dsc:
         resource_name: GPRegistryValue
-        name: "{{dsc_gp_name}}"
-        key: "{{dsc_gp_object_key}}"
-        valuename: "{{dsc_gp_object_valuename}}"
-        valuedata: "{{dsc_gp_object_valuedata}}"
-        valuetype: "{{dsc_gp_object_valuetype}}"
-        ensure: "{{dsc_gp_object_ensure}}"
+        Name: "{{dsc_gp_name}}"
+        Key: "{{dsc_gp_object_key}}"
+        ValueName: "{{dsc_gp_object_valuename}}"
+        ValueData: "{{dsc_gp_object_valuedata}}"
+        ValueType: "{{dsc_gp_object_valuetype}}"
+        Ensure: "{{dsc_gp_object_ensure}}"
