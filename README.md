@@ -3,8 +3,8 @@ Home for Windows Ansible Playbooks - The aim of this repository is to create a s
 
 # Overview
 New sections will continue to be added as more playbooks get created.
-- [`Simple`](https://github.com/JRBowman/ansible-winset/tree/master/simple) Playbooks contain examples that can be used standalone or in a Tower Workflow Template, where the Playbooks/Templates can be chained together.
-- `Complex` Playbooks (To Be Added) will contain more complex examples for Windows.
+- [`Simple Playbooks`](https://github.com/JRBowman/ansible-winset/tree/master/simple) contain examples that can be used standalone or in a Tower Workflow Template, where the Playbooks/Templates can be chained together.
+- `Complex Playbooks` (To Be Added) will contain more complex examples for Windows.
 
 # Getting Started
 The Ansible Windows Playbooks (BowmanRH) Repository is a `Git repository`. The repository can be used in any of the following ways:
