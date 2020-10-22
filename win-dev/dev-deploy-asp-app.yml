@@ -1,17 +1,29 @@
 ---
-#------------------------------
-# Deploy an ASP.NET app to IIS:
-#------------------------------
-# Uses the IIS Dev Tools + Web
-# Publish package to create new
-# IIS Sites.
-#------------------------------
+#-----------------------------------------------------------------------------------
+# Deploy an ASP.NET app to IIS - [Win_File & Win_IIS_Website & Win_Command Modules]:
+#-----------------------------------------------------------------------------------
+# Uses the IIS Dev Tools + Web Publish package to create new IIS Sites.
+#-----------------------------------------------------------------------------------
 
-#------------------------------
+#-----------------------------------------------------------------------------------
+# Documentation Links:
+#-----------------------------------------------------------------------------------
+# - Win_File: https://docs.ansible.com/ansible/latest/collections/ansible/windows/win_file_module.html
+# - Win_IIS_Website: https://docs.ansible.com/ansible/latest/collections/community/windows/win_iis_website_module.html
+# - Win_Command: https://docs.ansible.com/ansible/latest/collections/ansible/windows/win_command_module.html
+#-----------------------------------------------------------------------------------
+
+#-----------------------------------------------------------------------------------
 # Required Variables:
+#-----------------------------------------------------------------------------------
 # - dev_site_name
-# - dev_app_name
-#------------------------------
+# - dev_site_port
+# - dev_site_state
+# - dev_site_hostname
+# - dev_site_ip
+# - dev_app_package_name
+# - dev_app_package_path
+#-----------------------------------------------------------------------------------
 
 - name: Deploy ASP.NET app to IIS
   hosts: all
@@ -26,14 +38,14 @@
     - name: Configure IIS site
       win_iis_website:
         name: "{{dev_site_name}}"
-        state: started
-        port: 80
-        ip: 0.0.0.0
-        hostname: "host1.onbowman.com"
+        state: "{{dev_site_state | started}}"
+        port: "{{dev_site_port | 80}}"
+        ip: "{{dev_site_ip | 0.0.0.0}}"
+        hostname: "{{dev_site_hostname}}"
         application_pool: "{{dev_site_name}}"
         physical_path: "c:\\inetpub\\{{dev_site_name}}"
         parameters: logfile.directory:c:\sites\logs
       register: website
 
     - name: MS Deploy ASP.NET Site
-      win_command: "C:\\{{dev_site_name}}\\Deployments\\{{dev_app_name}}\\{{dev_app_name}}.deploy.cmd /Y"
+      win_command: "{{dev_app_package_path}}\\{{dev_app_package_name}}.deploy.cmd /Y"
