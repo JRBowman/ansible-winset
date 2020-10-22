@@ -1,12 +1,19 @@
 ---
-# ------------------------
-# Install Windows Updates:
-# ------------------------
+#------------------------------------------------
+# Install Windows Updates - [Win_Updates Module]:
+#------------------------------------------------
+# Simple example that instructs the Windows Host
+# to Install the latest updates from the Server's
+# configured *Update Service*.
+#------------------------------------------------
+
+#------------------------------------------------
+# No Required Variables.
+#------------------------------------------------
 
 - name: Windows Patching 
   hosts: all
   tasks:
     - name: Install Windows Updates
       win_updates:
-        category_names: omit
         reboot: yes
