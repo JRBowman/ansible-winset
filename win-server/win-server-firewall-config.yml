@@ -1,16 +1,15 @@
 ---
-#--------------------------------------------
-# Win_Firewall_Rule Module - Firewall Config:
-#--------------------------------------------
-# Example Firewall Configuration, this play
-# is good for `Push Configurations` as it 
-# takes a baseline *set* of FW Rules and 
-# Ensures the rules are *present* on hosts
-#--------------------------------------------
+#-------------------------------------------------------
+# Baseline Firewall Config - [Win_Firewall_Rule Module]:
+#-------------------------------------------------------
+# Example Firewall Configuration, this play is good for
+# `Push Configurations` as it takes a baseline *set* of
+# FW Rules and Ensures the rules are *present* on hosts.
+#-------------------------------------------------------
 
-#--------------------------------------------
+#-------------------------------------------------------
 # No Required Variables
-#--------------------------------------------
+#-------------------------------------------------------
 
 - name: Firewall Configuration for Windows Hosts.
   hosts: all
