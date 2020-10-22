@@ -1,7 +1,23 @@
 ---
-#-----------------------------------------
-# Windows DSC - Configure Windows Feature:
-#-----------------------------------------
+#----------------------------------------------
+# Configure Windows Feature - [Win_Dsc Module]:
+#----------------------------------------------
+# Use *Win_Dsc* Module to configure a Windows
+# Server Feature - Supporting Dynamic Object
+# input for JSON or PS Objects.
+#----------------------------------------------
+
+#----------------------------------------------
+# Documentation Links:
+#----------------------------------------------
+# - Win_Dsc: https://docs.ansible.com/ansible/latest/collections/ansible/windows/win_dsc_module.html
+#----------------------------------------------
+
+#----------------------------------------------
+# Required Variables:
+#----------------------------------------------
+# - 
+#----------------------------------------------
 
 - name: Configure Windows Features via DSC
   hosts: all
