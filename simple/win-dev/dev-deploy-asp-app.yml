@@ -38,9 +38,9 @@
     - name: Configure IIS site
       win_iis_website:
         name: "{{dev_site_name}}"
-        state: "{{dev_site_state | started}}"
-        port: "{{dev_site_port | 80}}"
-        ip: "{{dev_site_ip | 0.0.0.0}}"
+        state: "{{dev_site_state|started}}"
+        port: "{{dev_site_port|80}}"
+        ip: "{{dev_site_ip|0.0.0.0}}"
         hostname: "{{dev_site_hostname}}"
         application_pool: "{{dev_site_name}}"
         physical_path: "c:\\inetpub\\{{dev_site_name}}"
