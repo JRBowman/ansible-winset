@@ -34,7 +34,6 @@
              Get-ChildItem |
              Where-Object Name -eq Port |
              Select-Object -ExpandProperty Value)
-
            if ($port -notin $onlinePorts) {
              "The default client port $port is not set up as a WSMan "{{dsc_wsman_transport : HTTP}}" listener, win_dsc will not work."
            }
