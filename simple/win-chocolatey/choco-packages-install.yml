@@ -1,0 +1,42 @@
+---
+#----------------------------------------------------------------------
+# Install Applications / Packages on Windows - [Win_Chocolatey Module]:
+#----------------------------------------------------------------------
+# Iterate through a list of applications or packages to install on the
+# Windows Hosts.
+#----------------------------------------------------------------------
+
+#----------------------------------------------------------------------
+# Documentation Links:
+#----------------------------------------------------------------------
+# - Win_Chocolatey: https://docs.ansible.com/ansible/latest/collections/chocolatey/chocolatey/win_chocolatey_module.html
+#----------------------------------------------------------------------
+
+#----------------------------------------------------------------------
+# Required Variables:
+#----------------------------------------------------------------------
+# - choco_packages >> List of Packages for Chocolatey to install
+# - choco_async >> false: Sequential / Sync | true: Any / Async
+#----------------------------------------------------------------------
+
+- name: Use Chocolatey to install applications on the target hosts
+  hosts: all
+  tasks:
+
+    - name: Install Packages Sync
+      win_chocolatey:
+        name: '{{ item }}'
+        state: present
+      loop: '{{ choco_packages }}'
+      when: not choco_async
+
+    - name: Install Packages Async
+      win_chocolatey:
+        name: '{{ choco_packages }}'
+        state: present
+      when: choco_async
+
+# Examples: choco_packages
+#  - procexp
+#  - putty
+#  - windirstat

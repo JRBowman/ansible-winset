@@ -1,0 +1,26 @@
+---
+#-------------------------------------------------------------------
+# Update / Upgrade all Chocolatey Packages - [Win_Chocolatey Module]:
+#-------------------------------------------------------------------
+# Choco Update for all packages managed by Chocolatey on the target
+# Windows Hosts.
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+# Documentation Links:
+#-------------------------------------------------------------------
+# - Win_Chocolatey: https://docs.ansible.com/ansible/latest/collections/chocolatey/chocolatey/win_chocolatey_module.html
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+# No Required Variables.
+#-------------------------------------------------------------------
+
+- name: Update / Upgrade all Chocolatey managed packages
+  hosts: all
+  tasks:
+
+    - name: Upgrade installed packages
+      win_chocolatey:
+        name: all
+        state: latest

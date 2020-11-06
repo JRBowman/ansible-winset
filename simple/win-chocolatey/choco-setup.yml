@@ -1,0 +1,26 @@
+---
+#-------------------------------------------------------------
+# Install the Win_Chocolatey Module - [Win_Chocolatey Module]:
+#-------------------------------------------------------------
+# Use the *Win_Chocolatey* Module to ensure that Chocolatey is
+# installed.
+#-------------------------------------------------------------
+
+#-------------------------------------------------------------
+# Documentation Links:
+#-------------------------------------------------------------
+# - Win_Chocolatey: https://docs.ansible.com/ansible/latest/collections/chocolatey/chocolatey/win_chocolatey_module.html
+#-------------------------------------------------------------
+
+#-------------------------------------------------------------
+# No Required Variables.
+#-------------------------------------------------------------
+
+- name: Install and Setup Chocolatey
+  hosts: all
+  gather_facts: false
+  tasks:
+       - name: Install Chocolatey
+         win_chocolatey:
+           name: chocolatey
+           state: present
