@@ -28,13 +28,13 @@
         name: '{{ item }}'
         state: absent
       loop: '{{ choco_packages }}'
-      when: not choco_async
+      when: choco_async == 'false'
 
     - name: Uninstall Packages Async
       win_chocolatey:
         name: '{{ choco_packages }}'
         state: absent
-      when: choco_async
+      when: choco_async == 'true'
 
 # Examples: choco_packages
 #  - procexp

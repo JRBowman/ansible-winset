@@ -28,13 +28,13 @@
         name: '{{ item }}'
         state: present
       loop: '{{ choco_packages }}'
-      when: not choco_async
+      when: choco_async == 'false'
 
     - name: Install Packages Async
       win_chocolatey:
         name: '{{ choco_packages }}'
         state: present
-      when: choco_async
+      when: choco_async == 'true'
 
 # Examples: choco_packages
 #  - procexp
