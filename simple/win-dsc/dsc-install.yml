@@ -27,7 +27,7 @@
   hosts: all
   tasks:
     - name: Check WSMan settings
-      win_shell: '|
+      win_shell: |
         $port = (Get-Item -LiteralPath WSMan:\localhost\Client\DefaultPorts\"{{dsc_wsman_transport : HTTP}}").Value
         $onlinePorts = @(Get-ChildItem -LiteralPath WSMan:\localhost\Listener |
           Where-Object { 'Transport="{{dsc_wsman_transport : HTTP}}"' -in $_.Keys } |
@@ -37,4 +37,4 @@
 
         if ($port -notin $onlinePorts) {
           "The default client port $port is not set up as a WSMan "{{dsc_wsman_transport : HTTP}}" listener, win_dsc will not work."
-        }'
+        }
