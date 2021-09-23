@@ -1,0 +1,23 @@
+---
+#-----------------------------------------------------------
+# Interact with Windows Service - [Win_Service Module]:
+#-----------------------------------------------------------
+# Restart, Stop, Disable, etc. Work with Windows Services
+#-----------------------------------------------------------
+
+#-----------------------------------------------------------
+# Required Variables:
+#-----------------------------------------------------------
+# - win_service_name >> Name of the Windows Service
+# - win_service_mode >> Start Mode - auto : delayed : disabled : manual
+# - win_service_state >> absent : paused : started : stopped : restarted
+#-----------------------------------------------------------
+
+- name: Windows Service Control
+  hosts: all
+  tasks:
+    - name: Interact with Windows Service
+      win_service:
+        name: {{win_service_name}}
+        start_mode: {{win_service_mode}}
+        state: {{win_service_state}}
