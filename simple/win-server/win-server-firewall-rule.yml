@@ -30,3 +30,5 @@
         protocol: "{{fw_rule_protocol}}"
         state: "{{fw_rule_state}}"
         enabled: "{{fw_rule_enabled}}"
+
+# https://console.redhat.com/ansible/automation-hub/repo/published/ansible/windows

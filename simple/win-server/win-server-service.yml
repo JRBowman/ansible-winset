@@ -21,3 +21,5 @@
         name: "{{win_service_name}}"
         start_mode: "{{win_service_mode}}"
         state: "{{win_service_state}}"
+
+# https://console.redhat.com/ansible/automation-hub/repo/published/ansible/windows

@@ -24,3 +24,5 @@
       win_chocolatey:
         name: all
         state: latest
+
+        # https://console.redhat.com/ansible/automation-hub/repo/published/ansible/windows

@@ -38,3 +38,6 @@
        Name: "{{dsc_gp_name}}"
        Status: AllSettingsEnabled
        Ensure: present
+
+
+# https://console.redhat.com/ansible/automation-hub/repo/published/ansible/windows

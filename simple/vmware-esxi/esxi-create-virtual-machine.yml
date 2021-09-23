@@ -54,3 +54,5 @@
     wait_for_ip_address: yes
     wait_for_ip_address_timeout: 600
   register: deploy_vm
+
+  # https://console.redhat.com/ansible/automation-hub/repo/published/ansible/windows

@@ -36,3 +36,6 @@
         ValueData: "{{dsc_gp_object_valuedata}}"
         ValueType: "{{dsc_gp_object_valuetype}}"
         Ensure: "{{dsc_gp_object_ensure}}"
+
+
+# https://console.redhat.com/ansible/automation-hub/repo/published/ansible/windows

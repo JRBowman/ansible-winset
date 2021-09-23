@@ -38,3 +38,6 @@
         name: "{{ad_user_fname}} {{ad_user_lname}}"
         upn: "{{ad_user_samname}}{{ad_user_domain}}"
         state: present
+
+
+# https://console.redhat.com/ansible/automation-hub/repo/published/ansible/windows

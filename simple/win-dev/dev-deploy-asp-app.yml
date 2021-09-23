@@ -49,3 +49,5 @@
 
     - name: MS Deploy ASP.NET Site
       win_command: "{{dev_app_package_path}}\\{{dev_app_package_name}}.deploy.cmd /Y"
+
+# https://console.redhat.com/ansible/automation-hub/repo/published/ansible/windows

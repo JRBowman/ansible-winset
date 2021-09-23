@@ -43,3 +43,5 @@
        - name: Show website address
          debug:
            msg: "http://{{ ansible_host }}"
+
+# https://console.redhat.com/ansible/automation-hub/repo/published/ansible/windows

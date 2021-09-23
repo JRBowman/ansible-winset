@@ -19,3 +19,5 @@
     - name: Install Windows Updates
       win_updates:
         reboot: yes
+
+# https://console.redhat.com/ansible/automation-hub/repo/published/ansible/windows

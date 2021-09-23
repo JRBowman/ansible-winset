@@ -20,6 +20,9 @@
 
 - name: Configure Windows via DSC
   hosts: all
-    - tasks:
+  tasks:
       - name: Use win_dsc module to execute Windows Updates
         win_dsc:
+
+
+# https://console.redhat.com/ansible/automation-hub/repo/published/ansible/windows

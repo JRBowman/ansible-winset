@@ -21,8 +21,10 @@
 
 - name: Configure Windows Features via DSC
   hosts: all
-    - tasks:
+  tasks:
       - name: Use win_dsc module to configure Windows Features
         win_dsc:
           resource_name: WindowsFeature
           Name: telnet-client
+
+# https://console.redhat.com/ansible/automation-hub/repo/published/ansible/windows

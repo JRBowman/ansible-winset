@@ -36,3 +36,5 @@
        - name: Report Details
          debug:
            msg: "http://{{ ansible_host }} >> is no longer a serving webhost."
+
+# https://console.redhat.com/ansible/automation-hub/repo/published/ansible/windows

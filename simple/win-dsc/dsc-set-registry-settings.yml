@@ -27,7 +27,7 @@
 
 - name: Configure Registry Settings via DSC
   hosts: all
-    - tasks:
+  tasks:
       - name: Use win_dsc module to work with the Win Registry
         win_dsc:
           resoure_name: Registry
@@ -38,3 +38,6 @@
           PsDscRunAsCredential_username: '{{ansible_user}}'
           PsDscRunAsCredential_password: '{{ansible_password}}'
         no_log: true
+
+
+# https://console.redhat.com/ansible/automation-hub/repo/published/ansible/windows

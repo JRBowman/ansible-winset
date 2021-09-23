@@ -21,3 +21,5 @@
     - debug:
         msg: "{{osversion}}"
       when: osversion.changed == true
+
+# https://console.redhat.com/ansible/automation-hub/repo/published/ansible/windows

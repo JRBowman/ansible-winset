@@ -24,3 +24,5 @@
          win_chocolatey:
            name: chocolatey
            state: present
+
+           # https://console.redhat.com/ansible/automation-hub/repo/published/ansible/windows
