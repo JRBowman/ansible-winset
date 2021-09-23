@@ -37,3 +37,6 @@
            if ($port -notin $onlinePorts) {
              "The default client port $port is not set up as a WSMan "{{dsc_wsman_transport : HTTP}}" listener, win_dsc will not work."
            }
+
+
+# https://console.redhat.com/ansible/automation-hub/repo/published/ansible/windows
