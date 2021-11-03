@@ -11,17 +11,30 @@
 # - N/A
 #--------------------------------------------------------------
 
-- name: Defender Threat History
+- name: Defender Threat Scan
   hosts: all
   tasks:
-    - name: Get Defender Threat History
+    - name: Get Defender Active and Past Threats
       ansible.windows.win_powershell:
         script: |
-          Get-MpThreat
-      register: machine_threats
-      
+          $tempFile = "$ENV:Temp\ansible\win-def-logs"
+          $threats = Get-MpThreatDetection | ConvertTo-Json
+          
+          if ($threats -eq $null)
+          {
+            "No Threats Found - All Clear!" | ConvertTo-Json | Out-File -FilePath $tempFile -Append -Encoding string
+          {
+          else
+          {
+            "Threats Detected!" | ConvertTo-Json | Out-File -FilePath $tempFile -Append -Encoding string
+            $Ansible.Failed = $true
+          }
+      ignore_errors: yes
+      register: def_results
+
     - name: Threats
       ansible.builtin.debug:
-        msg: "Current Threats: {{ machine_threats }}"
+        msg: "Current Threats: {{ def_results }}"
+      ignore_errors: yes
 
 # https://console.redhat.com/ansible/automation-hub/repo/published/ansible/windows

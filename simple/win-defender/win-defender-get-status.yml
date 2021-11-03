@@ -17,11 +17,11 @@
     - name: Get Defender Status on Machine
       ansible.windows.win_powershell:
         script: |
-          Get-MpComputerStatus
-      register: machine_status
+          Get-MpComputerStatus | ConvertTo-Json | Out-File -FilePath "$ENV:Temp\ansible\win-def-logs" -Append -Encoding string
+      register: def_status
       
-    - name: Threats
+    - name: Status
       ansible.builtin.debug:
-        msg: "Current Threats: {{ machine_status }}"
+        msg: "Current Status: {{ def_status }}"
 
 # https://console.redhat.com/ansible/automation-hub/repo/published/ansible/windows

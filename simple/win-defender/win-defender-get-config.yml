@@ -11,17 +11,17 @@
 # - N/A
 #--------------------------------------------------------------
 
-- name: Firewall Rule for Specific Use Cases
+- name: Get Defender Configuration
   hosts: all
   tasks:
-    - name: Get Defender Preferences as $def_preferences
+    - name: Get Defender Preferences
       ansible.windows.win_powershell:
         script: |
-          Get-MpPreference
+          Get-MpPreference | ConvertTo-Json | Out-File -FilePath "$ENV:Temp\ansible\win-def-logs" -Append -Encoding string
       register: def_settings
       
-    - name: Threats
+    - name: Current Preferences
       ansible.builtin.debug:
-        msg: "Current Threats: {{ def_settings }}"
+        msg: "Current Preferences: {{ def_settings }}"
 
 # https://console.redhat.com/ansible/automation-hub/repo/published/ansible/windows

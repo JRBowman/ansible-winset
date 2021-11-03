@@ -8,15 +8,27 @@
 #--------------------------------------------------------------
 # Required Variables:
 #--------------------------------------------------------------
-# - def_config
+# - def_config => JSON configuration for Endpoint
 #--------------------------------------------------------------
 
 - name: Set Defender Configuration
   hosts: all
   tasks:
-    - name: Set Defender Preferences as $def_preferences
+    - name: Set Defender Preferences
       ansible.windows.win_powershell:
         script: |
-          $def_preferences = Get-MpPreference
+          $desiredConfig = "{{ def_config }}" | ConvertTo-Json
+          $currentConfig = Get-MpPreference | ConvertTo-Json
+
+          if ($desiredConfig -ne $currentConfig)
+          {
+            "Configuration wasn't current - Updated Defender Preferences." | ConvertTo-Json | Out-File -FilePath "$ENV:Temp\ansible\win-def-logs" -Append -Encoding string
+            $Ansible.Changed = $true
+          }
+      register: def_result
+
+    - name: Result
+      ansible.builtin.debug:
+        msg: "Result: {{ def_result }}"
 
 # https://console.redhat.com/ansible/automation-hub/repo/published/ansible/windows
