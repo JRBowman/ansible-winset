@@ -22,6 +22,6 @@
       
     - name: Threats
       ansible.builtin.debug:
-        msg: "Current Threats: {{ machine_status.output }}"
+        msg: "Current Threats: {{ machine_status }}"
 
 # https://console.redhat.com/ansible/automation-hub/repo/published/ansible/windows
