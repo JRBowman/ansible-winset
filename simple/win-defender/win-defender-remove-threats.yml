@@ -1,0 +1,28 @@
+---
+#--------------------------------------------------------------
+# Get Windows Defender Prefernces - [Win_Powershell Module]:
+#--------------------------------------------------------------
+# Get Windows Defender Preferences in a Powershell Variable.
+#--------------------------------------------------------------
+
+#--------------------------------------------------------------
+# Required Variables:
+#--------------------------------------------------------------
+# - N/A
+#--------------------------------------------------------------
+
+- name: Defender Remove Threats
+  hosts: all
+  tasks:
+    - name: Defender Fix Threats
+      ansible.windows.win_powershell:
+        # Have Defender fix the threats:
+        script: |
+          Get-MpComputerStatus
+      register: def_results
+      
+    - name: Result
+      ansible.builtin.debug:
+        msg: "Result: {{ def_results }}"
+
+# https://console.redhat.com/ansible/automation-hub/repo/published/ansible/windows

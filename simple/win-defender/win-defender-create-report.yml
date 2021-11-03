@@ -1,0 +1,21 @@
+---
+#--------------------------------------------------------------
+# Get Windows Defender Prefernces - [Win_Powershell Module]:
+#--------------------------------------------------------------
+# Get Windows Defender Preferences in a Powershell Variable.
+#--------------------------------------------------------------
+
+#--------------------------------------------------------------
+# Required Variables:
+#--------------------------------------------------------------
+# - def_results => Picks up results from workflow
+#--------------------------------------------------------------
+
+- name: Defender Endpoint Report
+  hosts: all
+  tasks:
+    - name: Defender Endpoint Report
+      ansible.builtin.debug:
+        msg: "Result: {{ def_results }}"
+
+# https://console.redhat.com/ansible/automation-hub/repo/published/ansible/windows
