@@ -17,6 +17,6 @@
     - name: Get Defender Threat History
       ansible.windows.win_powershell:
         script: |
-          Get-MpThreat
+          echo Get-MpThreat
 
 # https://console.redhat.com/ansible/automation-hub/repo/published/ansible/windows

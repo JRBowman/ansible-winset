@@ -17,6 +17,6 @@
     - name: Get Defender Status on Machine
       ansible.windows.win_powershell:
         script: |
-          Get-MpComputerStatus
+          echo Get-MpComputerStatus
 
 # https://console.redhat.com/ansible/automation-hub/repo/published/ansible/windows
