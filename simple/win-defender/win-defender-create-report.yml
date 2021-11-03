@@ -17,12 +17,12 @@
     - name: Gather Logs
       ansible.windows.win_powershell:
         script: |
-          Get-Content -Path "$ENV:Temp\ansible\win-def-logs"
+          Get-Content -Path "C:\temp\ansible\win-def-logs.log"
       register: def_logs
 
     - name: Clean Up Temp Files
       ansible.windows.win_file:
-        path: "%TEMP%\ansible\win-def-logs"
+        path: 'C:\temp\ansible\win-def-logs.log'
         state: absent
 
     - name: Defender Endpoint Report

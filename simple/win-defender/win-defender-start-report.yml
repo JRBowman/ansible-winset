@@ -16,7 +16,7 @@
   tasks:
     - name: Create Log
       ansible.windows.win_file:
-        path: '%TEMP%\ansible\win-def-logs'
+        path: 'C:\temp\ansible\win-def-logs.log'
         state: touch
 
     - name: Output
