@@ -14,8 +14,12 @@
 - name: Defender Endpoint Report
   hosts: all
   tasks:
+    - name: Gather Logs
+      ansible.windows.win_powershell:
+        script: |
+          Get-Content -Path $tempFile
     - name: Defender Endpoint Report
       ansible.builtin.debug:
-        msg: "Result: {{ def_results }}"
+        msg: "Result: {{ ansible_facts }}"
 
 # https://console.redhat.com/ansible/automation-hub/repo/published/ansible/windows
