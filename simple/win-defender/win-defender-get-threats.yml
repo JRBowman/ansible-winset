@@ -18,7 +18,7 @@
       ansible.windows.win_powershell:
         script: |
           Get-MpThreat
-        register: machine_threats
+      register: machine_threats
     - name: Threats
       ansible.builtin.debug:
         msg: "Current Threats: {{ machine_threats }}"
