@@ -8,7 +8,7 @@
 #--------------------------------------------------------------
 # Required Variables:
 #--------------------------------------------------------------
-# - def_results => Picks up results from workflow
+# - N/A
 #--------------------------------------------------------------
 
 - name: Defender Endpoint Report
@@ -16,7 +16,7 @@
   tasks:
     - name: Create Log
       ansible.windows.win_file:
-        path: "%TEMP%\ansible\win-def-logs"
+        path: '%TEMP%\ansible\win-def-logs'
         state: touch
 
     - name: Output
