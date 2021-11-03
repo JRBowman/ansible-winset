@@ -17,7 +17,7 @@
     - name: Get Defender Status on Machine
       ansible.windows.win_powershell:
         script: |
-          echo Get-MpComputerStatus
+          Get-MpComputerStatus
       register: machine_status
       
     - name: Threats
