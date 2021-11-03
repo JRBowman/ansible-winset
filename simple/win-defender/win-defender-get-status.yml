@@ -17,7 +17,7 @@
     - name: Get Defender Status on Machine
       ansible.windows.win_powershell:
         script: |
-          Get-MpComputerStatus | ConvertTo-Json | Out-File -FilePath "$ENV:Temp\ansible\win-def-logs" -Force -Append -Encoding string
+          Get-MpComputerStatus | ConvertTo-Json | Out-File -FilePath "$ENV:Temp\ansible\win-def-logs" -Append -Encoding string
       register: def_status
       
     - name: Status

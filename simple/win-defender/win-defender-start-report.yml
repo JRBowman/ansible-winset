@@ -8,20 +8,19 @@
 #--------------------------------------------------------------
 # Required Variables:
 #--------------------------------------------------------------
-# - N/A
+# - def_results => Picks up results from workflow
 #--------------------------------------------------------------
 
-- name: Get Defender Configuration
+- name: Defender Endpoint Report
   hosts: all
   tasks:
-    - name: Get Defender Preferences
-      ansible.windows.win_powershell:
-        script: |
-          Get-MpPreference | ConvertTo-Json | Out-File -FilePath "$ENV:Temp\ansible\win-def-logs" -Append -Encoding string
-      register: def_settings
-      
-    - name: Current Preferences
+    - name: Create Log
+      ansible.windows.win_file:
+        path: "%TEMP%\ansible\win-def-logs"
+        state: touch
+
+    - name: Output
       ansible.builtin.debug:
-        msg: "Current Preferences: {{ def_settings }}"
+        msg: "Defender Logs have been created!"
 
 # https://console.redhat.com/ansible/automation-hub/repo/published/ansible/windows
