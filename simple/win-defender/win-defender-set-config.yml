@@ -22,7 +22,7 @@
 
           if ($desiredConfig -ne $currentConfig)
           {
-            "Configuration wasn't current - Updated Defender Preferences." | ConvertTo-Json | Out-File -FilePath "$ENV:Temp\ansible\win-def-logs" -Append -Encoding string
+            "Configuration wasn't current - Updated Defender Preferences." | ConvertTo-Json | Out-File -FilePath "$ENV:Temp\ansible\win-def-logs" -Force -Append -Encoding string
             $Ansible.Changed = $true
           }
       register: def_result
