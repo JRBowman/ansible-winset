@@ -15,7 +15,8 @@
   hosts: all
   tasks:
     - name: Get Defender Threat History
-      ansible.windows.win_shell: |
-        Get-MpThreat
+      ansible.windows.win_powershell:
+        script: |
+          Get-MpThreat
 
 # https://console.redhat.com/ansible/automation-hub/repo/published/ansible/windows
