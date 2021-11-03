@@ -17,9 +17,10 @@
     - name: Get Defender Threat History
       ansible.windows.win_powershell:
         script: |
-          echo Get-MpThreat
+          Get-MpThreat
+        register: machine_threats
     - name: Threats
       ansible.builtin.debug:
-        msg: Current Threats {{ host_out }}
+        msg: "Current Threats: {{ machine_threats }}"
 
 # https://console.redhat.com/ansible/automation-hub/repo/published/ansible/windows
