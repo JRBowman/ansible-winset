@@ -1,0 +1,23 @@
+---
+#--------------------------------------------------------------
+# Get Windows Defender Prefernces - [Win_Powershell Module]:
+#--------------------------------------------------------------
+# Get Windows Defender Preferences in a Powershell Variable.
+#--------------------------------------------------------------
+
+#--------------------------------------------------------------
+# Required Variables:
+#--------------------------------------------------------------
+# - N/A
+#--------------------------------------------------------------
+
+- name: Firewall Rule for Specific Use Cases
+  hosts: all
+  tasks:
+    - name: Get Defender Preferences as $def_preferences
+      win_powershell:
+        script: |
+          $def_preferences = Get-MpPreference
+          echo $def_preferences
+
+# https://console.redhat.com/ansible/automation-hub/repo/published/ansible/windows

@@ -1,0 +1,22 @@
+---
+#--------------------------------------------------------------
+# Get Windows Defender Prefernces - [Win_Powershell Module]:
+#--------------------------------------------------------------
+# Get Windows Defender Preferences in a Powershell Variable.
+#--------------------------------------------------------------
+
+#--------------------------------------------------------------
+# Required Variables:
+#--------------------------------------------------------------
+# - N/A
+#--------------------------------------------------------------
+
+- name: Defender Threat History
+  hosts: all
+  tasks:
+    - name: Get Defender Threat History
+      win_powershell:
+        script: |
+          Get-MpThreat
+
+# https://console.redhat.com/ansible/automation-hub/repo/published/ansible/windows
