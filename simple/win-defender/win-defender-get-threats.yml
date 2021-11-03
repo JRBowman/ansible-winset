@@ -18,5 +18,8 @@
       ansible.windows.win_powershell:
         script: |
           echo Get-MpThreat
+    - name: Threats
+      ansible.builtin.debug:
+        msg: Current Threats {{ host_out }}
 
 # https://console.redhat.com/ansible/automation-hub/repo/published/ansible/windows
