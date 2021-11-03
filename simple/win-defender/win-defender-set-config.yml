@@ -15,7 +15,7 @@
   hosts: all
   tasks:
     - name: Set Defender Preferences as $def_preferences
-      win_powershell:
+      ansible.windows.win_powershell:
         script: |
           $def_preferences = Get-MpPreference
 

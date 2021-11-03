@@ -15,7 +15,7 @@
   hosts: all
   tasks:
     - name: Get Defender Threat History
-      win_powershell:
+      ansible.windows.win_powershell:
         script: |
           Get-MpThreat
 
