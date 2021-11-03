@@ -18,5 +18,10 @@
       ansible.windows.win_powershell:
         script: |
           echo Get-MpComputerStatus
+      register: machine_status
+      
+    - name: Threats
+      ansible.builtin.debug:
+        msg: "Current Threats: {{ machine_status.output }}"
 
 # https://console.redhat.com/ansible/automation-hub/repo/published/ansible/windows

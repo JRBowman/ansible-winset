@@ -19,6 +19,7 @@
         script: |
           Get-MpThreat
       register: machine_threats
+      
     - name: Threats
       ansible.builtin.debug:
         msg: "Current Threats: {{ machine_threats }}"

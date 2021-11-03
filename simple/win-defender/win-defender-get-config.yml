@@ -17,7 +17,11 @@
     - name: Get Defender Preferences as $def_preferences
       ansible.windows.win_powershell:
         script: |
-          $def_preferences = Get-MpPreference
-          echo $def_preferences
+          Get-MpPreference
+      register: def_settings
+      
+    - name: Threats
+      ansible.builtin.debug:
+        msg: "Current Threats: {{ def_settings.output }}"
 
 # https://console.redhat.com/ansible/automation-hub/repo/published/ansible/windows
