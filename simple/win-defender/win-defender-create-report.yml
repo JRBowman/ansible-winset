@@ -18,8 +18,7 @@
     - name: Gather Logs
       ansible.windows.win_powershell:
         script: |
-          $logs = cat "C:\temp\ansible\win-def-logs.log"
-          echo $logs
+          $Ansible.Result = Get-Content -Path "C:\temp\ansible\win-def-logs.log"
       #register: def_logs
 
     - name: Clean Up Temp Files
