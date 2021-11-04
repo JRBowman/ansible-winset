@@ -20,7 +20,7 @@
         script: |
           $logs = cat "C:\temp\ansible\win-def-logs.log"
           echo $logs
-      register: def_logs
+      #register: def_logs
 
     - name: Clean Up Temp Files
       ansible.windows.win_file:
