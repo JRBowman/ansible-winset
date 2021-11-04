@@ -18,7 +18,7 @@
       ansible.windows.win_powershell:
         # Have Defender fix the threats:
         script: |
-          Remove-MpThreat | ConvertTo-Json | Out-File -FilePath "C:\temp\ansible\win-def-logs.log" -Append -Encoding string
+          Remove-MpThreat | Out-File -FilePath "C:\temp\ansible\win-def-logs.log" -Append -Encoding string
       register: def_results
       
     - name: Result

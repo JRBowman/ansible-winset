@@ -22,11 +22,11 @@
           
           if ($threats -eq $null)
           {
-            "No Threats Found - All Clear!" | ConvertTo-Json | Out-File -FilePath $tempFile -Append -Encoding string
+            "No Threats Found - All Clear!" | Out-File -FilePath $tempFile -Append -Encoding string
           {
           else
           {
-            "Threats Detected!" | ConvertTo-Json | Out-File -FilePath $tempFile -Append -Encoding string
+            "Threats Detected!" | Out-File -FilePath $tempFile -Append -Encoding string
             $Ansible.Failed = $true
           }
       ignore_errors: yes
