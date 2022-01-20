@@ -11,10 +11,10 @@
   tasks:
     - name: Promote the Domain Controller
       ansible.windows.win_domain_controller:
-        dns_domain_name: {{ad_domain_name}}
-        domain_admin_user: {{ad_domain_admin}}
-        domain_admin_password: {{ad_domain_password}}
-        safe_mode_password: {{ad_domain_recovery_password}}
+        dns_domain_name: "{{ad_domain_name}}"
+        domain_admin_user: "{{ad_domain_admin}}@{{ad_domain_name}}"
+        domain_admin_password: "{{ad_domain_password}}"
+        safe_mode_password: "{{ad_domain_recovery_password}}"
         state: dc_promotion
 
 
