@@ -11,21 +11,10 @@
 # - vmware.vmware_rest.vcenter_datacenter_info: https://github.com/ansible-collections/vmware.vmware_rest/blob/main/docs/vmware.vmware_rest.vcenter_datacenter_info_module.rst
 #------------------------------------------------
 
-#------------------------------------------------
-# Required Variables:
-#------------------------------------------------
-# - vcenter_password
-# - vcenter_hostname
-# - vcenter_username
-# - vcenter_validate_certs
-#------------------------------------------------
-
 - name: Obtain vCenter DataCenter Info
   vmware.vmware_rest.vcenter_datacenter_info:
-    vcenter_password: '{{vc_password}}'
-    vcenter_username: '{{vc_user}}'
-    vcenter_hostname: '{{vc_hostname}}'
+    vcenter_password: "{{vc_password}}"
+    vcenter_username: "{{vc_user}}"
+    vcenter_hostname: "{{vc_hostname}}"
     vcenter_validate_certs: false
   register: datacenterdata
-
-  # https://console.redhat.com/ansible/automation-hub/repo/published/ansible/windows
