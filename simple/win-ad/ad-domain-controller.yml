@@ -15,7 +15,8 @@
         domain_admin_user: "{{ad_domain_admin}}@{{ad_domain_name}}"
         domain_admin_password: "{{ad_domain_password}}"
         safe_mode_password: "{{ad_domain_recovery_password}}"
-        state: dc_promotion
+        state: domain_controller
+      register: dc_promotion
     
     - name: Reboot after promotion
       ansible.windows.win_reboot:
