@@ -9,7 +9,6 @@
   tasks:
     - name: Promote the Domain Controller
       ansible.windows.win_domain:
-        create_dns_delegation: yes
         install_dns: yes
         dns_domain_name: "{{ad_domain_name}}"
         safe_mode_password: "{{ad_domain_recovery_password}}"
