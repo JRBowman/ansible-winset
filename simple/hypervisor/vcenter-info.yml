@@ -2,16 +2,12 @@
 #------------------------------------------------
 # Get DataCenter Info - [VMware_Guest Module]:
 #------------------------------------------------
-
-#------------------------------------------------
-# Documentation Links:
-#------------------------------------------------
-# - vmware.vmware_rest.vcenter_datacenter_info: https://github.com/ansible-collections/vmware.vmware_rest/blob/main/docs/vmware.vmware_rest.vcenter_datacenter_info_module.rst
-#------------------------------------------------
-
-- name: Obtain vCenter DataCenter Info
-  vmware.vmware_rest.vcenter_datacenter_info:
-    vcenter_password: "{{vc_password}}"
-    vcenter_username: "{{vc_user}}"
-    vcenter_hostname: "{{vc_hostname}}"
-  register: datacenterdata
+- name: Datacenter Data Info
+  hosts: all
+  tasks:
+    - name: Obtain vCenter DataCenter Info
+      vmware.vmware_rest.vcenter_datacenter_info:
+        vcenter_password: "{{vc_password}}"
+        vcenter_username: "{{vc_user}}"
+        vcenter_hostname: "{{vc_hostname}}"
+      register: datacenterdata
