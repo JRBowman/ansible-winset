@@ -28,7 +28,7 @@
   gather_facts: false
   tasks:
     - name: Create User Account
-      win_domain_user:
+      community.windows.win_domain_user:
         password: "{{ad_user_pass}}"
         email: "{{ad_user_samename}}@{{ad_user_domain}}"
         enabled: yes
