@@ -30,13 +30,13 @@
     - name: Create User Account
       community.windows.win_domain_user:
         password: "{{ad_user_pass}}"
-        email: "{{ad_user_samename}}@{{ad_user_domain}}"
+        email: "{{ad_user_samname}}@{{ad_user_domain}}"
         enabled: yes
         firstname: "{{ad_user_fname}}"
         surname: "{{ad_user_lname}}"
         groups: "{{ad_user_groups}}"
         name: "{{ad_user_fname}} {{ad_user_lname}}"
-        upn: "{{ad_user_samname}}{{ad_user_domain}}"
+        upn: "{{ad_user_samname}}@{{ad_user_domain}}"
         state: present
 
 
